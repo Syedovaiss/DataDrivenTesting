@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [MAJU PORTAL]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.portal.base.TestListeners"/>
+  </listeners>
+  <test thread-count="3" parallel="tests" name=" Positive Login Chrome (failed)">
+    <parameter name="browser" value="IE"/>
+    <groups>
+      <run>
+        <exclude name="Positive Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.portal.test.Testing">
+        <methods>
+          <include name="tearingDown"/>
+          <include name="positiveLoginTest"/>
+          <include name="settingUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.portal.test.Testing -->
+    </classes>
+  </test> <!--  Positive Login Chrome (failed) -->
+  <test thread-count="3" parallel="tests" name="Negative Login ch(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <exclude name="Negative Test"/>
+        <exclude name="broken"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.portal.test.Testing">
+        <methods>
+          <include name="negativeLoginTest" invocation-numbers="1"/>
+          <include name="tearingDown"/>
+          <include name="settingUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.portal.test.Testing -->
+    </classes>
+  </test> <!-- Negative Login ch(failed) -->
+</suite> <!-- Failed suite [MAJU PORTAL] -->

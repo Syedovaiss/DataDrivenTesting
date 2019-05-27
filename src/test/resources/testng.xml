@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MAJU PORTAL" parallel="tests" thread-count="3">
+	<listeners>
+
+		<listener class-name="com.portal.base.TestListeners"></listener>
+
+	</listeners>
+
+	<test name=" Positive Login Chrome ">
+		<parameter name="browser" value="chrome"></parameter>
+		<groups>
+
+			<run>
+
+				<exclude name="Positive Test"></exclude>
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.portal.test.Testing">
+				<methods>
+					<include name="positiveLoginTest"></include>
+
+				</methods>
+
+			</class>
+
+		</classes>
+	</test>
+
+
+	<!-- Another Test -->
+	<test name="Negative Login ch">
+		<parameter name="browser" value="chrome"></parameter>
+		<groups>
+
+			<run>
+
+				<exclude name="Negative Test"></exclude>
+				<exclude name="broken"></exclude>
+
+			</run>
+		</groups>
+
+		<classes>
+			<class name="com.portal.test.Testing">
+				<methods>
+					<include name="negativeLoginTest"></include>
+
+				</methods>
+
+			</class>
+
+		</classes>
+	</test>
+
+</suite>

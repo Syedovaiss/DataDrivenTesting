@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Check]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" name=" Positive Login CH (failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.portal.test.Testing">
+        <methods>
+          <include name="tearingDown"/>
+          <include name="positiveLoginTest"/>
+          <include name="settingUp"/>
+        </methods>
+      </class> <!-- com.portal.test.Testing -->
+    </classes>
+  </test> <!--  Positive Login CH (failed) -->
+</suite> <!-- Failed suite [Check] -->
